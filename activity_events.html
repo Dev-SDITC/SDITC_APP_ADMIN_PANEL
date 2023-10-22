@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs</title>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./index.html">SDITC</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link " aria-current="page" href="./index.html">Home</a>
+                    <!-- <a class="nav-link" href="./blogs.html">Blogs</a> -->
+                    <a class="nav-link active" href="./activity_events.html">Activity/Event/Blog</a>
+                    <!-- <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a> -->
+                    <button class="btn btn-light log_out_btn" type="submit" onclick="logOut()">Log Out</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="login_container container w-50 mt-5 bg-light p-3 rounded">
+        <div id="auth_box">
+            <form>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password">
+                </div>
+                <button type="submit" class="btn btn-primary">Log In</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="main_input" class="container-sm mt-4 mb-5">
+        <div>
+            <h3 class="text-center text-decoration-underline mb-4">Activity/Event/Blog Upload</h3>
+        </div>
+        <form class="row g-3 submit_form">
+            <div class="col-md-10">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" class="form-control" id="title" required>
+            </div>
+            <div class="col-md-2">
+                <label for="is_activity_event" class="form-label">Type</label>
+                <select class="form-select" id="is_activity_event" aria-label="Default select" required>
+                    <option selected value="activity_block">Activity</option>
+                    <option value="event_block">Event</option>
+                    <option value="blog_block">Blog</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label for="date" class="form-label">Date</label>
+                <input type="date" class="form-control" id="date" required>
+            </div>
+            <div class="col-md-4">
+                <label for="cover_img" class="form-label">Cover image link</label>
+                <input type="url" class="form-control" id="cover_img" required>
+            </div>
+            <div class="col-md-4">
+                <label for="fb_link" class="form-label">Share link</label>
+                <input type="url" class="form-control" id="fb_link">
+            </div>
+            <div class="form-floating">
+                <textarea class="form-control" id="short_description" style="height: 100px"></textarea>
+                <label for="short_description">Short description:</label>
+            </div>
+            <div class="form-floating">
+                <textarea class="form-control" id="full_text" style="height: 200px" required></textarea>
+                <label for="full_text">Full Text:</label>
+            </div>
+            <div class="col-12">
+                <button class="btn btn-primary submit_btn">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+
+    </script>
+    <!-- <script type="module" src='firebase_modules.js'></script> -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
+    <script src="main.js"></script>
+    <script src="./activity_events.js"></script>
+</body>
+
+</html>
