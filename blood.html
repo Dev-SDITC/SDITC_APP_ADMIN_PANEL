@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blogs</title>
+    <title>Blood Info</title>
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
@@ -28,8 +28,9 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-link" aria-current="page" href="./index.html">Home</a>
-                    <a class="nav-link active" href="./activity_events.html">Activity/Event/Blog</a>
-                    <a class="nav-link" href="./blood.html">Blood</a>
+                    <a class="nav-link" href="./activity_events.html">Activity/Event/Blog</a>
+                    <a class="nav-link active" href="./blood.html">Blood</a>
+                    <!-- <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a> -->
                     <button class="btn btn-light log_out_btn" type="submit" onclick="logOut()">Log Out</button>
                 </div>
             </div>
@@ -53,40 +54,41 @@
 
     <div id="main_input" class="container-sm mt-4 mb-5">
         <div>
-            <h3 class="text-center text-decoration-underline mb-4">Activity/Event/Blog Upload</h3>
+            <h3 class="text-center text-decoration-underline mb-4">Blood Info Upload</h3>
         </div>
         <form class="row g-3 submit_form">
-            <div class="col-md-10">
-                <label for="title" class="form-label">Title</label>
-                <input type="text" class="form-control" id="title" required>
+            <div class="col-md-8">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" required>
             </div>
-            <div class="col-md-2">
-                <label for="is_activity_event" class="form-label">Type</label>
-                <select class="form-select" id="is_activity_event" aria-label="Default select" required>
-                    <option selected value="activity_block">Activity</option>
-                    <option value="event_block">Event</option>
-                    <option value="blog_block">Blog</option>
+            <div class="col-md-4">
+                <label for="blood_type" class="form-label">Blood Type</label>
+                <select class="form-select" id="blood_type" aria-label="Default select" required>
+                    <option selected value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
                 </select>
             </div>
-            <div class="col-md-4">
-                <label for="date" class="form-label">Date</label>
-                <input type="date" class="form-control" id="date" required>
+            <div class="col-md-6">
+                <label for="locality" class="form-label">Local Area Name <small>(If not available, type "NA")</small></label>
+                <input type="text" class="form-control" id="locality" required>
             </div>
-            <div class="col-md-4">
-                <label for="cover_img" class="form-label">Cover image link</label>
-                <input type="url" class="form-control" id="cover_img" required>
+            <div class="col-md-6">
+                <label for="city_name" class="form-label">City Name</label>
+                <input type="text" class="form-control" id="city_name" required>
             </div>
-            <div class="col-md-4">
-                <label for="fb_link" class="form-label">Share link</label>
-                <input type="url" class="form-control" id="fb_link">
+            <div class="col-md-6">
+                <label for="age" class="form-label">Age</label>
+                <input type="number" class="form-control" id="age" required>
             </div>
-            <div class="form-floating">
-                <textarea class="form-control" id="short_description" style="height: 100px"></textarea>
-                <label for="short_description">Short description:</label>
-            </div>
-            <div class="form-floating">
-                <textarea class="form-control" id="full_text" style="height: 200px" required></textarea>
-                <label for="full_text">Full Text:</label>
+            <div class="col-md-6">
+                <label for="phone" class="form-label">Contact Number</label>
+                <input type="tel" class="form-control" id="phone" required>
             </div>
             <div class="col-12">
                 <button class="btn btn-primary submit_btn">Submit</button>
@@ -103,7 +105,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
     <script src="main.js"></script>
-    <script src="./activity_events.js"></script>
+    <script src="./blood.js"></script>
 </body>
 
 </html>
