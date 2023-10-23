@@ -15,7 +15,7 @@ submit_form.onsubmit = (e) => {
         'blood_type': blood_type.value,
         'address': [locality.value, city_name.value],
         'birth_year': birth_year,
-    }).then((snap) => alert("Blog added")).catch(err => {
+    }).then((snap) => alert("Blood Info added")).catch(err => {
         alert(err)
         console.log(err)
       })
